@@ -1,4 +1,5 @@
 {
+    "name": "flyiing/grid",
     "autoload": {
 	"psr-4": {
 	    "flyiing\\grid\\": ""
