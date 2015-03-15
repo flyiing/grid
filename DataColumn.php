@@ -1,12 +1,12 @@
 <?php
 
-namespace flyiing\uni\grid;
+namespace flyiing\grid;
 
 use yii\helpers\Html;
 
 /**
  * Class DataColumn
- * @package flyiing\uni\grid
+ * @package flyiing\grid
  *
  * Renders several attributes combined in one grid column
  * Отображение столбца содержащего несколько атрибутов модели
