@@ -6,10 +6,12 @@ use Yii;
 use yii\bootstrap\Button;
 use yii\helpers\ArrayHelper;
 use flyiing\uni\Icon;
+use yii\helpers\Html;
 
-class ActionColumn extends \yii\grid\ActionColumn {
+class ActionColumn extends \kartik\grid\ActionColumn {
 
-    public $template = '<div class="btn-group btn-group-sm action-column" role="group">{view} {update}</div> {delete}';
+    public $template = '<div class="btn-group btn-group-xs btn-group-vertical" role="group">{view}{update}{delete}</div>';
+    public $width = 'auto';
 
     public static function renderDefaultButton($title, $url, $model, $key, $options = [])
     {
@@ -38,14 +40,14 @@ class ActionColumn extends \yii\grid\ActionColumn {
         if (!isset($this->buttons['update'])) {
             $this->buttons['update'] = function($url, $model, $key) {
                 return static::renderDefaultButton(Icon::show('edit') . Yii::t('yii', 'Update'), $url, $model, $key, [
-                    'class' => 'btn btn-primary',
+                    'class' => 'btn btn-default',
                 ]);
             };
         }
         if (!isset($this->buttons['delete'])) {
             $this->buttons['delete'] = function($url, $model, $key) {
                 return static::renderDefaultButton(Icon::show('trash') . Yii::t('yii', 'Delete'), $url, $model, $key, [
-                    'class' => 'btn btn-xs btn-danger',
+                    'class' => 'btn btn-danger',
                     'data-confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
                     'data-method' => 'post',
                 ]);
