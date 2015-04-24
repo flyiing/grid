@@ -5,7 +5,7 @@ namespace flyiing\grid;
 use Yii;
 use yii\bootstrap\Button;
 use yii\helpers\ArrayHelper;
-use flyiing\uni\Icon;
+use kartik\icons\Icon;
 use yii\helpers\Html;
 
 class ActionColumn extends \kartik\grid\ActionColumn {
@@ -32,15 +32,15 @@ class ActionColumn extends \kartik\grid\ActionColumn {
     {
         if (!isset($this->buttons['view'])) {
             $this->buttons['view'] = function($url, $model, $key) {
-                return static::renderDefaultButton(Icon::show('eye-open') . Yii::t('yii', 'View'), $url, $model, $key, [
-                    'class' => 'btn btn-default',
+                return static::renderDefaultButton(Icon::show('eye') . Yii::t('yii', 'View'), $url, $model, $key, [
+                    'class' => 'btn btn-info',
                 ]);
             };
         }
         if (!isset($this->buttons['update'])) {
             $this->buttons['update'] = function($url, $model, $key) {
                 return static::renderDefaultButton(Icon::show('edit') . Yii::t('yii', 'Update'), $url, $model, $key, [
-                    'class' => 'btn btn-default',
+                    'class' => 'btn btn-success',
                 ]);
             };
         }
